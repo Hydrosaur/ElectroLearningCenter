@@ -5,19 +5,81 @@
  */
 
 body {
-    padding-top: 54px;
+  padding-top: 54px;
+  font-family: 'Nunito', sans-serif;
 }
 
 @media (min-width: 992px) {
-    body {
-        padding-top: 56px;
-    }
+  body {
+    padding-top: 56px;
+  }
 }
 
 .portfolio-item {
-    margin-bottom: 30px;
+  margin-bottom: 30px;
 }
 
 .pagination {
-    margin-bottom: 30px;
+  margin-bottom: 30px;
+}
+
+#courseModal .modal-body img {
+  width: 200px;
+  position: absolute;
+  left: 50%;
+  margin-left: -100px; /* This needs to be half of the width */
+}
+
+/*#courseImageHolder {
+  animation: neon4 1.5s ease-in-out infinite alternate;
+  -webkit-animation: neon4 1.5s ease-in-out infinite alternate;
+  -moz-animation: neon4 1.5s ease-in-out infinite alternate;
+}*/
+
+.doneBox {
+  transform: scale(2);
+  -webkit-transform: scale(2);
+  -moz-transform: scale(2);
+  margin-left: 10px;
+}
+
+#courseIndex {
+  margin-top: 5%;
+}
+
+#courseModalName {
+  position: absolute;
+  bottom: 5%;
+}
+
+.modal-body {
+  position: relative;
+  height: 300px;
+}
+
+@-webkit-keyframes neon4 {
+  from {
+    box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #B6FF00, 0 0 70px #B6FF00, 0 0 80px #B6FF00, 0 0 100px #B6FF00, 0 0 150px #B6FF00;
+  }
+  to {
+    box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #B6FF00, 0 0 35px #B6FF00, 0 0 40px #B6FF00, 0 0 50px #B6FF00, 0 0 75px #B6FF00;
+  }
+}
+
+@keyframes neon4 {
+  from {
+    box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #B6FF00, 0 0 70px #B6FF00, 0 0 80px #B6FF00, 0 0 100px #B6FF00, 0 0 150px #B6FF00;
+  }
+  to {
+    box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #B6FF00, 0 0 35px #B6FF00, 0 0 40px #B6FF00, 0 0 50px #B6FF00, 0 0 75px #B6FF00;
+  }
+}
+
+@-moz-keyframes neon4 {
+  from {
+    box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #B6FF00, 0 0 70px #B6FF00, 0 0 80px #B6FF00, 0 0 100px #B6FF00, 0 0 150px #B6FF00;
+  }
+  to {
+    box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #B6FF00, 0 0 35px #B6FF00, 0 0 40px #B6FF00, 0 0 50px #B6FF00, 0 0 75px #B6FF00;
+  }
 }

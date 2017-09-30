@@ -15,6 +15,8 @@
 
     <!-- Custom styles for this template -->
     <link href="css/4-col-portfolio.css" rel="stylesheet">
+    <link href="vendor/animate.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
   </head>
 
@@ -27,11 +29,30 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
+        <!-- <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" id="myCourses">My Courses</a>
+            </li>
+          </ul>
+        </div> -->
       </div>
     </nav>
 
     <!-- Page Content -->
     <div class="container">
+      <table class="table table-hover" id="courseIndex">
+        <thead>
+          <tr>
+            <th>Course Name</th>
+            <th>Progress</th>
+            <th>Code</th>
+          </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+      </table>
       <div class="input-group" style="margin-top: 5%;">
         <input type="text" class="form-control" id="codeInput" placeholder="Paste a learning code here...">
         <div class="input-group-addon" style="padding: 0;"><button type="button" class="btn btn-success" id="learnButton">Learn!</button></div>
@@ -48,34 +69,29 @@
       </div>
       <!-- /.row -->
 
-      <!-- Pagination -->
-      <ul class="pagination justify-content-center">
-        <li class="page-item">
-          <a class="page-link" href="#" aria-label="Previous">
-            <span aria-hidden="true">&laquo;</span>
-            <span class="sr-only">Previous</span>
-          </a>
-        </li>
-        <li class="page-item">
-          <a class="page-link" href="#">1</a>
-        </li>
-        <li class="page-item">
-          <a class="page-link" href="#">2</a>
-        </li>
-        <li class="page-item">
-          <a class="page-link" href="#">3</a>
-        </li>
-        <li class="page-item">
-          <a class="page-link" href="#" aria-label="Next">
-            <span aria-hidden="true">&raquo;</span>
-            <span class="sr-only">Next</span>
-          </a>
-        </li>
-      </ul>
-
     </div>
     <!-- /.container -->
-
+    <div class="modal fade" id="courseModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">New Course Unlocked!</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div id="courseImageHolder">
+              <img src="https://achievement-images.teamtreehouse.com/badges_JavaScript_react_Stage1-23.png" class="center-block" />
+            </div>
+            <h5 id="courseModalName" class="text-center"></h5>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-success" data-dismiss="modal">Yay!</button>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- Footer -->
     <!-- <footer class="py-5 bg-dark">
       <div class="container">
