@@ -38,13 +38,12 @@ function loadCourses(code) {
       course.code = code;
       var saveableCourse = {
         code: course.code,
-        title: course.title.replace("Treehouse - ", ""),
+        title: courseName,
         videos: videosToProgress(course.item)
       };
-      var courseIndex = courses.findIndex(containsCode);
-      var wasCodeUsed = courses.some(containsCode);
-
+      var wasCodeUsed = courses.some((item) => {return item.code === code;});
       if(!wasCodeUsed){
+        console.log("wasCodeUsed?", wasCodeUsed);
         courses.push(saveableCourse);
         localStorage.setItem('courses', JSON.stringify(courses));
         $("#courseModal .modal-body img").attr("class", "center-block");
@@ -55,15 +54,14 @@ function loadCourses(code) {
         $("#courseModal").modal('show');
         updateCourseIndex();
       }
+      var courseIndex = courses.findIndex((item) => {return item.code === code;});
       $("#courseName").text(courseName);
       $("#videos").empty();
-      console.log(courses);
       course.item.forEach(function(item, idx){
-        console.log(saveableCourse.videos[idx]);
         $("#videos").append(`
           <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
             <div class="card h-100">
-              <a href="${item.enclosure._url}" target="_blank"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+              <a href="${item.enclosure._url}" target="_blank"><img class="card-img-top" src="https://placehold.it/700x400" alt=""></a>
               <div class="card-body">
                 <h4 class="card-title">
                   <a href="${item.enclosure._url}" target="_blank">${idx+1}. ${item.title}</a>
@@ -108,7 +106,7 @@ function calculateProgress(videos){
 function createDoneBoxHandlers(code){
   $(".doneBox").change(function(e){
     var index = Number($(this).data("id"));
-    var courseIndex = courses.findIndex(containsCode);
+    var courseIndex = courses.findIndex((item) => {return item.code === code;});
     if($(this)[0].checked) {
       courses[courseIndex].videos[index].done = true;
       updateCourseIndex();
@@ -138,8 +136,4 @@ function updateCourseIndex(){
     `);
   });
   createCourseIndexHandlers();
-}
-
-function containsCode(item){
-  return (item) => {return item.code === code;}
 }
